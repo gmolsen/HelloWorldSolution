@@ -8,11 +8,54 @@ namespace HelloWorldProject {
 	class Program {
 		// properties (variables) go first
 		static int Age;
+		int Counter = 0;
 		// methods (functions) go last
+
+		int IncrementNumber(int nbr) {
+			int incrementValue = 7;
+			return nbr + incrementValue;
+		}
+
+		int AddNumbers(int parameter1, int parameter2) {
+			return parameter1 + parameter2;
+		}
+
+		int AddNumbers(int parameter1, int parameter2, int parameter3) {
+			return parameter1 + parameter2 + parameter3;
+		}
+
+		double AddNumbers(double parameter1, double parameter2) {
+			return parameter1 + parameter2;
+		}
+
+		int SubtractTwoNumbers(int parameter1, int parameter2) {
+			return parameter1 - parameter2;
+		}
+
+		void Print(string message) {
+			Console.WriteLine(message);
+		}
+
+		string ToFullName(string name1, string name2) {
+			return $"{name1}{name2}";
+		}
+
 		static void Main(string[] args) {
-			Console.WriteLine("Hello World!");
+			new Program().Run();
+		}
+		void Run() {
+			var FullName2 = ToFullName("Greg"," Olsen");
+			Print(FullName2);
+			Print(IncrementNumber(6).ToString());
+			var sum = AddNumbers(2, 3);
+			Print(sum.ToString());
+			Print(AddNumbers(2, 3, 4).ToString());
+			Print(AddNumbers(2.2, 3.3).ToString());
+			var diff = SubtractTwoNumbers(5, 3);
+			Print(diff.ToString());
+			Print("Hello World!");
 			Age = 0;
-			Console.WriteLine(Age);
+			Print(Age.ToString());
 			int Counter = 1;
 			Console.WriteLine("Value of counter is " + Counter);
 			int numerator = 5;
